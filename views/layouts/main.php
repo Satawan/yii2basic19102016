@@ -36,6 +36,11 @@ AppAsset::register($this);
             'class' => 'navbar-defalse',
         ],
     ]);
+    
+    $setting=[
+        ['label' => 'สถานะคอมพิวเตอร์', 'url' => ['/comstatus']],       
+    ];
+ 
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'encodeLabels' => false,
@@ -44,6 +49,7 @@ AppAsset::register($this);
             ['label' => '<span class="glyphicon glyphicon-user"></span> เกี่ยวกับเรา', 'url' => ['/site/about']],
             ['label' => '<span class="glyphicon glyphicon-envelope"></span> ติดต่อเรา', 'url' => ['/site/contact']],
             ['label' => 'ทดสอบ1', 'url' => ['/first1/index']],
+            ['label' => 'ตั้งค่าระบบ', 'items' => $setting],            
             
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]
